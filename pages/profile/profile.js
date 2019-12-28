@@ -7,19 +7,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: 'About',
+    title: '222',
     userInfo: {
       wechat: 'WEDN-NET',
       nickName: 'https://github.com/zce/weapp-douban',
-      avatarUrl: 'https://img.zce.me/qrcode/wechat.jpg'
+      avatarUrl: ''
     }
   },
 
   getUserInfo () {
-    app.wechat.getUserInfo()
-      .then(res => this.setData({ userInfo: res.userInfo }))
+    app.wechat.getUserInfo().then(res => { console.log(res) })
+    //
   },
 
+  joinList() {
+    // TODO: 访问历史的问题
+    wx.navigateTo({
+      url: '../joins/joins'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -27,6 +33,7 @@ Page({
     app.wechat.login()
       .then(res => {
         if (res.code) {
+          app.wechat.getUserInfo().then(res => this.setData({ userInfo: res.userInfo }))
           console.log('登录成功！' + res.code)
         } else {
           console.error('获取用户登录态失败！' + res.errMsg)

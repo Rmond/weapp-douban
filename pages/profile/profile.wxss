@@ -7,24 +7,30 @@
 .header text {
   padding: 20rpx;
   color: #999;
-  font-size: 80rpx;
+  font-size: 25rpx;
   text-align: center;
 }
 
 .user {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
 .user-avatar {
-  width: 100%;
+  width: 100rpx;
   height: 780rpx;
   margin: 40rpx;
+  border-radius:50%;
 }
 
 .user-nickname {
   color: #aaa;
-  font-size: 40rpx;
-  margin-bottom: 30rpx;
+  font-size: 35rpx;
+  margin-bottom: 10rpx;
+}
+
+.bt {
+  padding: 5rpx;
+  background-color: #999;
 }
