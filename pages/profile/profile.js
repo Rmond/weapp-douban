@@ -10,7 +10,7 @@ Page({
     title: '222',
     userInfo: {
       wechat: 'WEDN-NET',
-      nickName: 'https://github.com/zce/weapp-douban',
+      nickName: 'cc',
       avatarUrl: ''
     }
   },
@@ -33,7 +33,7 @@ Page({
     app.wechat.login()
       .then(res => {
         if (res.code) {
-          app.wechat.getUserInfo().then(res => this.setData({ userInfo: res.userInfo }))
+          //app.wechat.getUserInfo().then(res => this.setData({ userInfo: res.userInfo }))
           console.log('登录成功！' + res.code)
         } else {
           console.error('获取用户登录态失败！' + res.errMsg)

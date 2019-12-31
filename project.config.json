@@ -10,6 +10,7 @@
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -20,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.1",
+	"libVersion": "2.9.4",
 	"appid": "wxa36d2916c1ef9a42",
 	"projectname": "douban",
 	"isGameTourist": false,

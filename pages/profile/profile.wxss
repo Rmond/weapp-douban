@@ -18,10 +18,10 @@
 }
 
 .user-avatar {
-  width: 100rpx;
-  height: 780rpx;
+  width: 120rpx;
   margin: 40rpx;
-  border-radius:50%;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .user-nickname {
