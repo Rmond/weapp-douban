@@ -1,6 +1,4 @@
-var goods = require('../../data/goods.js');
-
-// pages/joins.js
+// pages/wanted/waned.js
 Page({
 
   /**
@@ -10,20 +8,11 @@ Page({
 
   },
 
-  get_gooddetail() {
-    // TODO: 访问历史的问题
-    wx.navigateTo({
-      url: '../detail/detail'
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({
-        //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
-        goodList: goods.goodList
-      });
+
   },
 
   /**

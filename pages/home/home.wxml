@@ -1,4 +1,8 @@
-<!--pages/joins.wxml-->
+<!--pages/home.wxml-->
+<view class="header">
+<button>最新抽奖</button>
+<button>已结束</button>
+</view>
 <view class="container">
   <block wx:for="{{goodList}}" wx:key="item">
     <view class="item" bindtap="get_gooddetail" data-good-id="{{item.id}}">

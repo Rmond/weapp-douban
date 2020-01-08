@@ -1,22 +1,25 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/splash/splash",
     "pages/board/board",
     "pages/list/list",
     "pages/item/item",
     "pages/search/search",
     "pages/profile/profile",
-    "pages/joins/joins"
+    "pages/joins/joins",
+    "pages/detail/detail",
+    "pages/wanted/wanted"
   ],
   "permission": {
-      "scope.userLocation": {
-        "desc": "你的位置信息将用于小程序位置接口的效果展示"
-      }
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
   "window": {
     "navigationBarBackgroundColor": "#ededed",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "电影 « 豆瓣",
+    "navigationBarTitleText": "XX抽奖",
     "backgroundColor": "#f8f9fb",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": false
@@ -28,16 +31,16 @@
     "backgroundColor": "#f7f7f7",
     "list": [
       {
-        "text": "榜单",
-        "pagePath": "pages/board/board",
-        "iconPath": "images/board.png",
-        "selectedIconPath": "images/board-actived.png"
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-actived.png"
       },
       {
-        "text": "搜索",
-        "pagePath": "pages/search/search",
-        "iconPath": "images/search.png",
-        "selectedIconPath": "images/search-actived.png"
+        "text": "心愿单",
+        "pagePath": "pages/wanted/wanted",
+        "iconPath": "images/wanted.png",
+        "selectedIconPath": "images/wanted-actived.png"
       },
       {
         "text": "我的",

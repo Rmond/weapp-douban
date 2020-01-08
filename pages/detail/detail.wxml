@@ -1,0 +1,17 @@
+<!--pages/detail.wxml-->
+<view class="container">
+      <image class="goodImage" src="{{ goodInfo.image }}"/>
+      <view class="summary">
+      <text class="label">奖品：{{goodInfo.remark}}</text>
+      <text class="label">x{{goodInfo.numbers}}</text>
+    </view>
+      <text class="time">{{ goodInfo.time }} 开奖</text>
+</view>
+<view class="container center">
+   <view class="partake" bindtap="">
+    <text>参与抽奖</text>
+   </view>
+   <text class="time">观看完整视频即可参与抽奖</text>
+</view>
+
+
