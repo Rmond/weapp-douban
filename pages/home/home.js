@@ -7,13 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    buttonid: 'new'
   },
+
   get_gooddetail() {
     // TODO: 访问历史的问题
     wx.navigateTo({
       url: '../detail/detail'
     })
+  },
+
+  get_goodList(e) {
+    console.log(e.currentTarget.dataset)
+    this.setData({
+      //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
+      goodList: goods.goodList,
+      buttonid: e.currentTarget.id
+    });
   },
   /**
    * 生命周期函数--监听页面加载
