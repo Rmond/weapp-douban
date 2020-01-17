@@ -1,1 +1,48 @@
 /* pages/wanted/waned.wxss */
+/* pages/joins.wxss */
+page {
+    background-color: #eee;
+}
+
+.item {
+  margin: 15rpx;
+  background-color: #f9f9f9;
+  border-radius: 3%;
+}
+
+.goodImage {
+  width: 100%;
+  border-radius: 3% 3% 0 0;
+}
+
+.summary {
+  padding: 10rpx;
+  display: flex;
+  flex-flow:row;
+  justify-content: space-between;
+}
+
+.heart {
+  padding: 10rpx;
+  display: flex;
+  flex-flow:row;
+}
+
+.label {
+  display: block;
+  font-size: 30rpx;
+  margin-top: 7rpx;
+  margin-bottom: 10rpx;
+}
+
+.time {
+  color:#666;
+  padding: 10rpx;
+ font-size: 25rpx;
+}
+
+.star {
+  margin-left: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}

@@ -1,18 +1,34 @@
 // pages/wanted/waned.js
+var goods = require('../../data/goods.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+     goodList:[]
   },
 
+  set_wanted(e) {
+    var idx = e.currentTarget.dataset.idx
+    var obj = this.data.goodList[idx]
+    if(obj.star){
+      obj.wanted_num = obj.wanted_num -1
+    }else{
+      obj.wanted_num = obj.wanted_num +1
+    }
+    obj.star = !obj.star
+    this.setData({ [ "goodList["+idx+"]" ] : obj})
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
+      goodList: goods.goodList
+    });
   },
 
   /**
@@ -33,14 +49,13 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log("aaaaaaaa");
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**

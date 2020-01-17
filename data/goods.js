@@ -7,6 +7,7 @@ var goodList = [{
     "wanted_num": 1234,
     "target_num": 1234,
     "state": 1,
+    "star": true,
     "time": "2020-01-04 11:00" 
   }]
 

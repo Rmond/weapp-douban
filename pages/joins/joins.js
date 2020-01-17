@@ -10,10 +10,11 @@ Page({
 
   },
 
-  get_gooddetail() {
+  get_gooddetail(e) {
     // TODO: 访问历史的问题
+    console.log(e.currentTarget.dataset),
     wx.navigateTo({
-      url: '../detail/detail'
+      url: '../detail/detail?goodid=' + e.currentTarget.dataset.goodId
     })
   },
   /**
