@@ -1,13 +1,7 @@
 <!--pages/joins.wxml-->
+<import src ="../common/good-list.wxml"/>
 <view class="container">
   <block wx:for="{{goodList}}" wx:key="item">
-    <view class="item" bindtap="get_gooddetail" data-good-id="{{item.id}}">
-      <image class="goodImage" src="{{ item.image }}"/>
-      <view class="summary">
-      <text class="label">奖品：{{item.remark}}</text>
-      <text class="label">x{{item.numbers}}</text>
-      </view>
-      <text class="time">{{ item.time }} 开奖</text>
-    </view>
+    <template is="good-list" data="{{item:item}}"/>
   </block>
 </view>

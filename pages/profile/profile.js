@@ -26,6 +26,11 @@ Page({
       url: '../joins/joins'
     })
   },
+  wantedList() {
+    wx.navigateTo({
+      url: '../wanted/wanted'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
