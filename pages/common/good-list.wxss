@@ -1,8 +1,3 @@
-/* pages/joins.wxss */
-page {
-    background-color: #eee;
-}
-
 .item {
   margin: 15rpx;
   background-color: #f9f9f9;
@@ -11,6 +6,7 @@ page {
 
 .goodImage {
   width: 100%;
+  height: 375rpx;
   border-radius: 3% 3% 0 0;
 }
 

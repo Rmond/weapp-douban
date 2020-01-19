@@ -1,0 +1,16 @@
+.star {
+  margin-left: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.heart {
+  padding: 10rpx;
+  display: flex;
+  flex-flow:row;
+}
+.label {
+  display: block;
+  font-size: 30rpx;
+  margin-top: 7rpx;
+  margin-bottom: 10rpx;
+}

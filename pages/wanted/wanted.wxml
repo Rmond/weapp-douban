@@ -1,18 +1,5 @@
 <!--pages/wanted/wanted.wxml-->
-<view class="container">
-  <block wx:for="{{goodList}}" wx:key="item" wx:for-index="idx">
-    <view class="item" bindtap="get_gooddetail" data-good-id="{{item.id}}">
-      <image class="goodImage" src="{{ item.image }}"/>
-      <view class="summary">
-      <text class="label">奖品：{{item.remark}}</text>
-      <text class="label">x{{item.numbers}}</text>
-      </view>
-      <view class="heart">
-      <text class="label">{{item.wanted_num}}</text>
-      <image wx:if="{{item.star}}" class="star" src="/images/heart.png"  bindtap="set_wanted" data-idx="{{idx}}"></image>
-      <image wx:else class="star" src="/images/noheart.png" bindtap="set_wanted" data-idx="{{idx}}"></image>
-      </view>
-      <text class="time">集齐{{item.target_num}}人便可进入抽奖阶段</text>  
-    </view>
-  </block>
-</view>
+<import src ="../common/wanted-list.wxml"/>
+<block wx:for="{{goodList}}" wx:key="item" wx:for-index="idx">
+  <template is="wanted-list" data="{{item:item,idx:idx}}"/>
+</block>

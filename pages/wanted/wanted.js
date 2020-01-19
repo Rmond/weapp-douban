@@ -11,6 +11,7 @@ Page({
 
   set_wanted(e) {
     var idx = e.currentTarget.dataset.idx
+    console.log(idx)
     var obj = this.data.goodList[idx]
     if(obj.star){
       obj.wanted_num = obj.wanted_num -1

@@ -1,7 +1,5 @@
 <!--pages/joins.wxml-->
 <import src ="../common/good-list.wxml"/>
-<view class="container">
-  <block wx:for="{{goodList}}" wx:key="item">
-    <template is="good-list" data="{{item:item}}"/>
-  </block>
-</view>
+<block wx:for="{{goodList}}" wx:key="item">
+  <template is="good-list" data="{{item:item}}"/>
+</block>

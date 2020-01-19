@@ -9,6 +9,17 @@ var goodList = [{
     "state": 1,
     "star": true,
     "time": "2020-01-04 11:00" 
+}, {
+    "id": "1235",
+    "remark": "爱奇艺黄金会员2个月",
+    "image": "http://5.595818.com/resource/software/000/006/214e22b8000ecb0995c0544644332505.jpg",
+    "numbers": 1,
+    "partake_num": 234,
+    "wanted_num": 234,
+    "target_num": 4234,
+    "state": 1,
+    "star": false,
+    "time": "2020-01-14 11:00"
   }]
 
 var goodInfo = {

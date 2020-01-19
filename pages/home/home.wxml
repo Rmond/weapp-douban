@@ -4,8 +4,6 @@
 <button class="button" id="new" style="color:{{ buttonid == 'new' ? 'red' : 'black' }}" data-state="1" bindtap="get_goodList">最新抽奖</button>
 <button class="button" id="old" style="color:{{ buttonid == 'old' ? 'red' : 'black' }}" data-state="3" bindtap="get_goodList">已结束</button>
 </view>
-<view class="container">
-  <block wx:for="{{goodList}}" wx:key="item">
+<block wx:for="{{goodList}}" wx:key="item">
     <template is="good-list" data="{{item:item}}"/>
-  </block>
-</view>
+</block>
