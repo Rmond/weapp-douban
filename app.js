@@ -10,13 +10,15 @@ const wechat = require('./utils/wechat.js')
  * Douban API 模块
  * @type {Object}
  */
-const douban = require('./utils/douban.js')
+//const douban = require('./utils/douban.js')
 
 /**
  * Baidu API 模块
  * @type {Object}
  */
 const baidu = require('./utils/baidu.js')
+
+const bjmedeng = require('./utils/bjmedeng.js')
 
 App({
   /**
@@ -37,18 +39,31 @@ App({
   /**
    * Douban API
    */
-  douban: douban,
+  //douban: douban,
 
   /**
    * Baidu API
    */
   baidu: baidu,
 
+  bjmedeng:bjmedeng,
+
   /**
    * 生命周期函数--监听小程序初始化
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch () {
+    wechat.login()
+      .then(res => {
+        if (res.code) {
+          //app.wechat.getUserInfo().then(res => this.setData({ userInfo: res.userInfo }))
+          var path = 'v2/login/wechat/mini?code=' + res.code
+          bjmedeng(path, 'GET').then(res => wx.setStorageSync('Authorization', res.data.body.token))
+          console.log('登录成功！' + res.code)
+        } else {
+          console.error('获取用户登录态失败！' + res.errMsg)
+        }
+    }),
     wechat
       .getLocation()
       .then(res => {
