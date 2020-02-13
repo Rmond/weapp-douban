@@ -12,19 +12,20 @@ Page({
 
   get_gooddetail(e) {
     // TODO: 访问历史的问题
-    console.log(e.currentTarget.dataset),
     wx.navigateTo({
-      url: '../detail/detail?goodid=' + e.currentTarget.dataset.goodId
+      url: '../detail/detail?goodId=' + e.currentTarget.dataset.goodId
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.setData({
+    app.bjmedeng("v1/award/list?pageIndex=0&pageSize=10&tableType=" + e.currentTarget.dataset.state, "GET").then(
+      res => this.setData({
         //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
-        goodList: goods.goodList
-      });
+        goodList: res.data.body.awards,
+      })
+    )
   },
 
   /**

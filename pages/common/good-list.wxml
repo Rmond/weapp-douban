@@ -1,11 +1,11 @@
 <!--pages/joins.wxml-->
 <template name="good-list">
     <view class="item" bindtap="get_gooddetail" data-good-id="{{item.id}}">
-      <image class="goodImage" src="{{ item.image }}"/>
+      <image class="goodImage" src="{{ item.awardUrl }}"/>
       <view class="summary">
-      <text class="label">奖品：{{item.remark}}</text>
+      <text class="label">奖品：{{item.name}}</text>
       <text class="label">x{{item.numbers}}</text>
       </view>
-      <text class="time">{{ item.time }} 开奖</text>
+      <text class="time">{{ item.lotteryTime }} 开奖</text>
     </view>
 </template>

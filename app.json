@@ -9,7 +9,8 @@
     "pages/profile/profile",
     "pages/joins/joins",
     "pages/detail/detail",
-    "pages/wanted/wanted"
+    "pages/wanted/wanted",
+    "pages/mywanted/mywanted"
   ],
   "permission": {
     "scope.userLocation": {

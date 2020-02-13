@@ -2,8 +2,9 @@
 <import src ="../common/good-list.wxml"/>
 <view class="header">
 <button class="button" id="new" style="color:{{ buttonid == 'new' ? 'red' : 'black' }}" data-state="1" bindtap="get_goodList">最新抽奖</button>
-<button class="button" id="old" style="color:{{ buttonid == 'old' ? 'red' : 'black' }}" data-state="3" bindtap="get_goodList">已结束</button>
+<button class="button" id="old" style="color:{{ buttonid == 'old' ? 'red' : 'black' }}" data-state="2" bindtap="get_goodList">已结束</button>
 </view>
 <block wx:for="{{goodList}}" wx:key="item">
     <template is="good-list" data="{{item:item}}"/>
 </block>
+<text>{{msg}}</text>

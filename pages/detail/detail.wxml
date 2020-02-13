@@ -1,11 +1,11 @@
 <!--pages/detail.wxml-->
 <view class="container">
-      <image class="goodImage" src="{{ goodInfo.image }}"/>
+      <image class="goodImage" src="{{ goodInfo.awardUrl }}"/>
       <view class="summary">
-      <text class="label">奖品：{{goodInfo.remark}}</text>
+      <text class="label">奖品：{{goodInfo.name}}</text>
       <text class="label">x{{goodInfo.numbers}}</text>
     </view>
-      <text class="time">{{ goodInfo.time }} 开奖</text>
+      <text class="time">{{ goodInfo.lotteryTime }} 开奖</text>
 </view>
 <view class="container center">
    <view class="partake" bindtap="">

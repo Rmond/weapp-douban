@@ -1,0 +1,5 @@
+<!--pages/mywanted/mywanted.wxml-->
+<import src ="../common/wanted-list.wxml"/>
+<block wx:for="{{wantedList}}" wx:key="item" wx:for-index="idx">
+  <template is="wanted-list" data="{{item:item,idx:idx}}"/>
+</block>

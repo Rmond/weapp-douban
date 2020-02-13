@@ -1,0 +1,6 @@
+/* pages/mywanted/mywanted.wxss */
+@import"../common/good-list.wxss";
+@import"../common/wanted-list.wxss";
+page {
+    background-color: #eee;
+}

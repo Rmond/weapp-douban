@@ -1,35 +1,32 @@
 // pages/wanted/waned.js
-var goods = require('../../data/goods.js');
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     goodList:[]
+     wantedList:[],
+     msg: ""
   },
 
   set_wanted(e) {
     var idx = e.currentTarget.dataset.idx
     console.log(idx)
-    var obj = this.data.goodList[idx]
+    var obj = this.data.wantedList[idx]
     if(obj.star){
       obj.wanted_num = obj.wanted_num -1
     }else{
       obj.wanted_num = obj.wanted_num +1
     }
     obj.star = !obj.star
-    this.setData({ [ "goodList["+idx+"]" ] : obj})
+    this.setData({ [ "wantedList["+idx+"]" ] : obj})
 
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
-      goodList: goods.goodList
-    });
   },
 
   /**
@@ -43,7 +40,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.bjmedeng("v1/wish/list", "GET").then(
+      res => {
+        console.log(res)
+        if (res.data.state == 1) {
+          this.setData({
+            wantedList: res.data.body.wishes,
+            msg: ""
+          })
+        } else {
+          this.setData({
+            wantedList: [],
+            msg: "没有更多了"
+          })
+        }
+      }
+    )
   },
 
   /**
