@@ -8,10 +8,11 @@
       <text class="time">{{ goodInfo.lotteryTime }} 开奖</text>
 </view>
 <view class="container center">
-   <view class="partake" bindtap="">
+   <view wx:if="{{goodInfo.partak==false}}" class="partake" bindtap="partake" data-good-id="{{goodInfo.id}}">
     <text>参与抽奖</text>
+   </view>
+   <view wx:else class="partake">
+    <text>已参与</text>
    </view>
    <text class="time">观看完整视频即可参与抽奖</text>
 </view>
-
-

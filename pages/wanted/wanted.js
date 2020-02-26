@@ -14,10 +14,11 @@ Page({
     var idx = e.currentTarget.dataset.idx
     console.log(idx)
     var obj = this.data.wantedList[idx]
+    console.log(obj)
     if(obj.star){
-      obj.wanted_num = obj.wanted_num -1
+      obj.wantedNum = obj.wantedNum -1
     }else{
-      obj.wanted_num = obj.wanted_num +1
+      obj.wantedNum = obj.wantedNum +1
     }
     obj.star = !obj.star
     this.setData({ [ "wantedList["+idx+"]" ] : obj})

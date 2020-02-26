@@ -6,9 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
 
+  partake(e) {
+    var goodid = e.currentTarget.dataset.goodId
+    app.bjmedeng("/v1/award/drawLuck", "POST",).then(
+      res => (
+        goodInfo.partak = true,
+      )
+    )
+  },
   /**
    * 生命周期函数--监听页面加载
    */
