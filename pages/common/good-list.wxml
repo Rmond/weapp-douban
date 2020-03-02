@@ -1,6 +1,6 @@
 <!--pages/joins.wxml-->
 <template name="good-list">
-    <view class="item" bindtap="get_gooddetail" data-good-id="{{item.id}}">
+    <view class="item" bindtap="get_gooddetail" data-good-id="{{item.goodsId}}">
       <image class="goodImage" src="{{ item.awardUrl }}"/>
       <view class="summary">
       <text class="label">奖品：{{item.name}}</text>

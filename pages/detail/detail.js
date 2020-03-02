@@ -10,10 +10,14 @@ Page({
 
   partake(e) {
     var goodid = e.currentTarget.dataset.goodId
-    app.bjmedeng("/v1/award/drawLuck", "POST",).then(
-      res => (
-        goodInfo.partak = true,
-      )
+    app.bjmedeng("/v1/award/drawLuck", "POST", {"goodsId": goodid}).then(
+      res => {
+        if(res.data.state==1){
+          this.setData({
+            ['goodInfo.partak']: true
+          })
+        }
+      }
     )
   },
   /**
@@ -21,10 +25,13 @@ Page({
    */
   onLoad: function (options) {
     app.bjmedeng("v1/award/detail?id=" + options.goodId, "GET").then(
-      res => this.setData({
+      res => {
+        console.log(res)
+        this.setData({
         //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
         goodInfo: res.data.body,
       })
+      }
     )
   },
 

@@ -1,4 +1,4 @@
-var goods = require('../../data/goods.js');
+const app = getApp()
 
 // pages/joins.js
 Page({
@@ -20,7 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.bjmedeng("v1/award/list?pageIndex=0&pageSize=10&tableType=" + e.currentTarget.dataset.state, "GET").then(
+    app.bjmedeng("v1/award/drawLuck/list", "GET").then(
       res => this.setData({
         //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
         goodList: res.data.body.awards,

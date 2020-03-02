@@ -63,7 +63,11 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log("aaaaaaaa");
+    app.bjmedeng("v1/wish/list", "GET").then(
+      res => {
+        console.log(res)
+      }
+    )
   },
 
   /**
