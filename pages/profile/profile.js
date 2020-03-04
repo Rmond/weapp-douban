@@ -7,16 +7,14 @@ Page({
    */
   data: {
     title: '222',
-    userInfo: {
-      wechat: 'WEDN-NET',
-      nickName: 'cc',
-      avatarUrl: ''
-    }
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
-  getUserInfo () {
-    app.wechat.getUserInfo().then(res => { console.log(res) })
-    //
+  bindGetUserInfo(e) {
+    console.log(e.detail.userInfo)
+    app.bjmedeng("/user/supple/wechat", "POST", e.detail.userInfo).then(
+      res => {console.log(res)}
+    )
   },
 
   joinList() {
