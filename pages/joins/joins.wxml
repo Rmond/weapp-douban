@@ -1,5 +1,11 @@
 <!--pages/joins.wxml-->
-<import src ="../common/good-list.wxml"/>
 <block wx:for="{{goodList}}" wx:key="item">
-  <template is="good-list" data="{{item:item}}"/>
+      <view class="item" bindtap="get_gooddetail" data-good-id="{{item.goodsId}}">
+      <view class="summary">
+      <text class="label">奖品：{{item.name}}</text>
+      <text class="label">x{{item.numbers}}</text>
+      </view>
+      <text  wx:if="{{item.partak==true}}" class="time">{{ item.lotteryTime }} 开奖</text>
+      <text  wx:else class="time">已开奖</text>
+    </view>
 </block>

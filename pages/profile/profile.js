@@ -7,14 +7,6 @@ Page({
    */
   data: {
     title: '222',
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-
-  bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
-    app.bjmedeng("/user/supple/wechat", "POST", e.detail.userInfo).then(
-      res => {console.log(res)}
-    )
   },
 
   joinList() {

@@ -39,7 +39,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.bjmedeng("v1/award/list?pageIndex=0&pageSize=10&tableType=1", "GET").then(
+      res => this.setData({
+        //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
+        goodList: res.data.body.awards,
+        mag: ""
+      })
+    )
   },
 
   /**
@@ -53,13 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    app.bjmedeng("v1/award/list?pageIndex=0&pageSize=10&tableType=1", "GET").then(
-      res => this.setData({
-        //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
-        goodList: res.data.body.awards,
-        mag: ""
-      })
-    )
+
   },
 
   /**

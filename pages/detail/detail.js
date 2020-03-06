@@ -8,17 +8,35 @@ Page({
   data: {
   },
 
+
   partake(e) {
     var goodid = e.currentTarget.dataset.goodId
-    app.bjmedeng("/v1/award/drawLuck", "POST", {"goodsId": goodid}).then(
-      res => {
-        if(res.data.state==1){
-          this.setData({
-            ['goodInfo.partak']: true
-          })
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+        app.bjmedeng("/v1/award/drawLuck", "POST", { "goodsId": goodid }).then(
+            res => {
+              if (res.data.state == 1) {
+                this.setData({
+                  ['goodInfo.partak']: true
+                })
+              }
+            }
+          )
         }
+      else{
+          app.bjmedeng("/user/supple/wechat", "POST", e.detail.userInfo).then(
+            res => {
+              if (res.data.state == 1) {
+
+              }
+            }
+          )
       }
-    )
+      }
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载

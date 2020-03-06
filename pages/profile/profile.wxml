@@ -2,9 +2,9 @@
 <view class="container">
   <view class="user">
     <!-- <image class="user-avatar" src="{{ userInfo.avatarUrl }}" mode="widthFix"/> -->
-      <button class="bt2" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    <view class="user-avatar">
       <open-data type="userAvatarUrl"></open-data>
-      </button>
+    </view>
     <view class="user-nickname">
       <open-data type="userNickName"></open-data>
     </view>
