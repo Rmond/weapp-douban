@@ -10,7 +10,10 @@
     "pages/joins/joins",
     "pages/detail/detail",
     "pages/wanted/wanted",
-    "pages/mywanted/mywanted"
+    "pages/mywanted/mywanted",
+    "pages/mys",
+    "pages/mywanted",
+    "pages/won"
   ],
   "permission": {
     "scope.userLocation": {
@@ -20,7 +23,7 @@
   "window": {
     "navigationBarBackgroundColor": "#ededed",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "XX抽奖",
+    "navigationBarTitleText": "0元抽VIP",
     "backgroundColor": "#f8f9fb",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": false

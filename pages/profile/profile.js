@@ -17,7 +17,7 @@ Page({
   },
   wantedList() {
     wx.navigateTo({
-      url: '../wanted/wanted'
+      url: '../mywanted/mywanted'
     })
   },
   /**
