@@ -11,9 +11,7 @@
     "pages/detail/detail",
     "pages/wanted/wanted",
     "pages/mywanted/mywanted",
-    "pages/mys",
-    "pages/mywanted",
-    "pages/won"
+    "pages/won/won"
   ],
   "permission": {
     "scope.userLocation": {

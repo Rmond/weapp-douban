@@ -12,9 +12,7 @@ Page({
 
   set_wanted(e) {
     var idx = e.currentTarget.dataset.idx
-    console.log(idx)
     var obj = this.data.wantedList[idx]
-    console.log(obj)
     if(obj.star){
       obj.wantedNum = obj.wantedNum -1
     }else{
@@ -63,7 +61,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    app.bjmedeng("v1/wish/list", "GET").then(
+    app.bjmedeng("v1/wish/want", "POST", { "goodsWishId": goodid }).then(
       res => {
         console.log(res)
       }

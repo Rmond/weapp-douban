@@ -20,6 +20,11 @@ Page({
       url: '../mywanted/mywanted'
     })
   },
+  wonList() {
+    wx.navigateTo({
+      url: '../won/won'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -41,5 +41,7 @@ page {
     justify-content: center;
     align-items: center;
     color: #fff;
+    padding:0;
+    font-size: 15px;
     background-color: #d60101;
 }

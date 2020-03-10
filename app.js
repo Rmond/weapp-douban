@@ -31,6 +31,9 @@ App({
     currentCity: '北京'
   },
 
+  globalData: {
+    haveUserWechat: false
+  },
   /**
    * WeChat API
    */
@@ -58,25 +61,29 @@ App({
         if (res.code) {
           //app.wechat.getUserInfo().then(res => this.setData({ userInfo: res.userInfo }))
           var path = 'v2/login/wechat/mini?code=' + res.code
-          bjmedeng(path, 'GET').then(res => wx.setStorageSync('Authorization', res.data.body.token))
+          bjmedeng(path, 'GET').then(res => {
+            console.log(res)
+            wx.setStorageSync('Authorization', res.data.body.token)
+            this.globalData.haveUserWechat=res.data.body.haveUserWechat
+          })
           console.log('登录成功！' + res.code)
         } else {
           console.error('获取用户登录态失败！' + res.errMsg)
         }
-    }),
-    wechat
-      .getLocation()
-      .then(res => {
-        const { latitude, longitude } = res
-        return baidu.getCityName(latitude, longitude)
-      })
-      .then(name => {
-        this.data.currentCity = name.replace('市', '')
-        console.log(`currentCity : ${this.data.currentCity}`)
-      })
-      .catch(err => {
-        this.data.currentCity = '北京'
-        console.error(err)
-      })
+    })
+    // wechat
+    //   .getLocation()
+    //   .then(res => {
+    //     const { latitude, longitude } = res
+    //     return baidu.getCityName(latitude, longitude)
+    //   })
+    //   .then(name => {
+    //     this.data.currentCity = name.replace('市', '')
+    //     console.log(`currentCity : ${this.data.currentCity}`)
+    //   })
+    //   .catch(err => {
+    //     this.data.currentCity = '北京'
+    //     console.error(err)
+    //   })
   }
 })
