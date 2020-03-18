@@ -60,12 +60,12 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-    app.bjmedeng("v1/wish/want", "POST", { "goodsWishId": goodid }).then(
-      res => {
-        console.log(res)
-      }
-    )
+  onHide: function (e) {
+    // app.bjmedeng("v1/wish/want", "POST", { "goodsWishId": goodid }).then(
+    //   res => {
+    //     console.log(res)
+    //   }
+    // )
   },
 
   /**

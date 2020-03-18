@@ -1,4 +1,5 @@
 // pages/mywanted/mywanted.js
+const app = getApp()
 Page({
 
   /**
