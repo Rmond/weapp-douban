@@ -13,7 +13,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.bjmedeng("v1/wish/myWish", "GET").then(
+      res => {
+        console.log(res)
+        if (res.data.state == 1) {
+          this.setData({
+            wantedList: res.data.body.wishes,
+            msg: ""
+          })
+        } else {
+          this.setData({
+            wantedList: [],
+            msg: "没有更多了"
+          })
+        }
+      }
+    )
   },
 
   /**

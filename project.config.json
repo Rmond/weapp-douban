@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.2",
+	"libVersion": "2.10.3",
 	"appid": "wxcd0b1830bfa4ed3f",
 	"projectname": "douban",
 	"isGameTourist": false,

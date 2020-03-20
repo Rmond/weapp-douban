@@ -5,10 +5,15 @@
       <text class="label">奖品：{{goodInfo.name}}</text>
       <text class="label">x{{goodInfo.numbers}}</text>
     </view>
+    <block wx:if="{{goodInfo.state==0}}">
       <text class="time">{{ goodInfo.lotteryTime }} 开奖</text>
+    </block>
+    <block wx:else>
+      <text class="time">{{goodInfo.winningNicknames}}中奖</text>
+    </block>
 </view>
 <view class="container center">
-   <button wx:if="{{goodInfo.partak==false}}" open-type="getUserInfo" class="partake" bindtap="partake" data-good-id="{{goodInfo.goodsId}}">参与抽奖</button>
+   <button wx:if="{{goodInfo.partak==false}}" open-type="getUserInfo" class="partake" bindgetuserinfo="partake" data-good-id="{{goodInfo.goodsId}}">参与抽奖</button>
    <view wx:else class="partake">
     <text>已参与</text>
    </view>

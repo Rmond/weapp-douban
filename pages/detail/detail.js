@@ -12,23 +12,32 @@ Page({
   partake(e) {
     var goodid = e.currentTarget.dataset.goodId
     if (!app.globalData.haveUserWechat) {
-      console.log(e.detail.userInfo)
+      if (e.detail.userInfo){
       app.bjmedeng("/user/supple/wechat", "POST", e.detail.userInfo).then(
         res => {
           if (res.data.state == 1) {
             app.globalData.haveUserWechat = true
           }
         })
+      }else{
+        wx.showToast({
+          title: '系统需要获取参与人昵称以便中奖后显示',
+          icon: 'none',
+          duration: 2000
+        })
+      }
     }
+    if(e.detail.userInfo){
     app.bjmedeng("/v1/award/drawLuck", "POST", { "goodsId": goodid }).then(
       res => {
         if (res.data.state == 1) {
           this.setData({
             ['goodInfo.partak']: true
           })
-              }
-            }
-          )
+        }
+      }
+    )
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -36,7 +45,6 @@ Page({
   onLoad: function (options) {
     app.bjmedeng("v1/award/detail?id=" + options.goodId, "GET").then(
       res => {
-        console.log(res)
         this.setData({
         //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
         goodInfo: res.data.body,

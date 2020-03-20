@@ -39,17 +39,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (wx.getStorageSync('Authorization')){
-      app.userLogin()
-    }
-    app.bjmedeng("v1/award/list?pageIndex=0&pageSize=10&tableType=1", "GET").then(
-        res => this.setData({
+    var that = this
+    var timer = setTimeout(function () {
+      if (wx.getStorageSync('Authorization')) {
+        app.bjmedeng("v1/award/list?pageIndex=0&pageSize=10&tableType=1", "GET").then(
+          res => {
+            console.log(res)
+            if(res.data.state==1){
+            that.setData({
             //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
-            goodList: res.data.body.awards,
-            mag: ""
-        })
-    )
-  },
+            goodList: res.data.body.awards
+          })
+          }else{
+            that.setData({
+                //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
+                msg: "没有更多了"
+            })
+          }
+          }
+        )
+        clearTimeout(timer)
+      }
+  }, 1* 1000)
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
