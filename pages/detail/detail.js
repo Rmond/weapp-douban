@@ -11,6 +11,7 @@ Page({
 
   partake(e) {
     var goodid = e.currentTarget.dataset.goodId
+    console.log(app.globalData.haveUserWechat)
     if (!app.globalData.haveUserWechat) {
       if (e.detail.userInfo){
       app.bjmedeng("/user/supple/wechat", "POST", e.detail.userInfo).then(
