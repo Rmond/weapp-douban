@@ -6,11 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hiddenmodalput: true
+    hiddenmodalput: true,
+    id:""
   },
   //点击按钮痰喘指定的hiddenmodalput弹出框 
-  modalinput: function () {
+  modalinput: function (e) {
     this.setData({
+      addressid:e.currentTarget.dataset.id,
       hiddenmodalput: !this.data.hiddenmodalput
     })
   },
@@ -22,9 +24,18 @@ Page({
   },
   //确认 
   confirm: function () {
-    this.setData({
-      hiddenmodalput: true
-    })
+    var address = {
+      "address": "string",
+      "id": 0,
+      "name": "string",
+      "telPhone": "string"
+    }
+    app.bjmedeng("/v1/award/addAddress", "POST", e.detail.userInfo).then(
+      res => {
+        this.setData({
+          hiddenmodalput: true
+        })
+      })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -32,6 +43,7 @@ Page({
   onLoad: function (options) {
     app.bjmedeng("v1/award/win", "GET").then(
       res => {
+        console.log(res)
         this.setData({
           goodList: res.data.body.winInfos,
           msg: ""

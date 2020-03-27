@@ -19,4 +19,18 @@ page {
   padding: 10rpx;
   display: flex;
   flex-flow:row;
+  padding-top:20rpx;
+  padding-bottom: 20rpx;
+  border-top: 1rpx solid #ff9508;
+}
+
+.itemView {
+  display: flex;
+  flex-flow:row;
+  margin: 20rpx;
+}
+
+input {
+ border: 1rpx solid #000;
+ border-radius: 10rpx;
 }

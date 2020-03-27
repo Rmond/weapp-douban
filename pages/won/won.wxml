@@ -6,7 +6,7 @@
       <text class="label">奖品：{{item.goodsName}}</text>
       </view>
       <block wx:if="{{item.goodsType==3}}">
-      <view class="heart" bindtap = "modalinput">
+      <view class="heart" bindtap = "modalinput" data-id="{{item.id}}">
       <image class="star" src="/images/jiahao.png"></image>
       <text>添加收货信息</text>
       </view>
@@ -16,10 +16,16 @@
       </block>
     </view>
 </block>
-<modal id = "modal" hidden = "{{hiddenmodalput}}" title = "地址信息" confirm-text = "提交"
-cancel-text = "取消" bindcancel = "cancel" bindconfirm = "confirm">
-<text>姓名：</text><input type = 'text' focus /> 
-<text>电话：</text><input type = 'number' focus /> 
-<text>地址：</text><input type = 'text' focus /> 
+<modal id="modal" hidden = "{{hiddenmodalput}}" title = "地址信息" confirm-text = "提交"
+cancel-text = "取消" bindcancel = "cancel" bindconfirm = "confirm" data-id="{{addressid}}">
+<view class="itemView">
+姓名：<input type = 'text' focus /> 
+</view>
+<view class="itemView">
+电话：<input type = 'number' focus />
+</view>
+<view class="itemView">
+地址：<input type = 'text' focus />
+</view>
 </modal>
     
