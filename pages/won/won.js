@@ -1,3 +1,4 @@
+const app = getApp()
 // pages/won.js
 Page({
 
@@ -5,14 +6,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    hiddenmodalput: true
   },
-
+  //点击按钮痰喘指定的hiddenmodalput弹出框 
+  modalinput: function () {
+    this.setData({
+      hiddenmodalput: !this.data.hiddenmodalput
+    })
+  },
+  //取消按钮 
+  cancel: function () {
+    this.setData({
+      hiddenmodalput: true
+    });
+  },
+  //确认 
+  confirm: function () {
+    this.setData({
+      hiddenmodalput: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.bjmedeng("v1/award/win", "GET").then(
+      res => {
+        this.setData({
+          goodList: res.data.body.winInfos,
+          msg: ""
+        })
+      }
+    )
   },
 
   /**

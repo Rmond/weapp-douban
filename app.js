@@ -60,7 +60,6 @@ onLaunch () {
         //app.wechat.getUserInfo().then(res => this.setData({ userInfo: res.userInfo }))
         var path = 'v2/login/wechat/mini?code=' + res.code
         bjmedeng(path, 'GET').then(res => {
-          console.log(res)
           wx.setStorageSync('Authorization', res.data.body.token)
           this.globalData.haveUserWechat = res.data.body.haveUserWechat
         }

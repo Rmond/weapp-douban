@@ -1,1 +1,22 @@
 /* pages/won.wxss */
+@import"../common/good-list.wxss";
+page {
+    background-color: #eee;
+}
+
+.kalman {
+  background-color: #ffe8334d;
+  font-size: 30rpx;
+}
+
+.star {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.heart {
+  padding: 10rpx;
+  display: flex;
+  flex-flow:row;
+}
