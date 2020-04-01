@@ -7,7 +7,11 @@ Page({
    */
   data: {
     hiddenmodalput: true,
-    id:""
+    goodList:{},
+    id:"",
+    name:"",
+    phone:"",
+    address:""
   },
   //点击按钮痰喘指定的hiddenmodalput弹出框 
   modalinput: function (e) {
@@ -23,19 +27,35 @@ Page({
     });
   },
   //确认 
-  confirm: function () {
-    var address = {
-      "address": "string",
-      "id": 0,
-      "name": "string",
-      "telPhone": "string"
+  confirm: function (e) {
+    var info = {
+      "address": this.data.address,
+      "id": e.currentTarget.dataset.id,
+      "name": this.data.name,
+      "telPhone": this.data.phone
     }
-    app.bjmedeng("/v1/award/addAddress", "POST", e.detail.userInfo).then(
+    console.log(info)
+    app.bjmedeng("/v1/award/addAddress", "POST", info).then(
       res => {
         this.setData({
           hiddenmodalput: true
         })
       })
+  },
+  getname(e) {
+    this.setData({
+      name: e.detail.value
+    });
+  },
+  getphone(e){
+    this.setData({
+      phone: e.detail.value
+    });
+  },
+  getaddress(e){
+    this.setData({
+      address: e.detail.value
+    });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -46,7 +66,6 @@ Page({
         console.log(res)
         this.setData({
           goodList: res.data.body.winInfos,
-          msg: ""
         })
       }
     )

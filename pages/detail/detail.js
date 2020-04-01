@@ -46,6 +46,7 @@ Page({
   onLoad: function (options) {
     app.bjmedeng("v1/award/detail?id=" + options.goodId, "GET").then(
       res => {
+        console.log(res)
         this.setData({
         //jsonData.dataList获取json.js里定义的json数据，并赋值给dataList
         goodInfo: res.data.body,
